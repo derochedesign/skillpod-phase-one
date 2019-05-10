@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import SkillTile from "components/dashboard/SkillTile";
 import MiniSkillTile from "components/dashboard/MiniSkillTile";
 import HeadProgress from "components/dashboard/HeadProgress";
-import TipsPopup from '/TipsPopup';
+import TipsPopup from 'components/TipsPopup';
 import MainToolbar from "components/utility/MainToolbar";
 
 import smarterLearning from "img/icons/skills/smarterLearning.svg";

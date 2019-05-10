@@ -5,8 +5,8 @@ import PortfolioThumbs from "components/portfolio/PortfolioThumbs";
 import CurrentPortfolioPiece from "components/portfolio/CurrentPortfolioPiece";
 import MainToolbar from "components/utility/MainToolbar";
 
-import me from "user/me.jpg";
-import portfolio_hero from "user/portfolio/infoManagement/hero.jpg";
+import me from "img/user/me.jpg";
+import portfolio_hero from "img/user/portfolio/infoManagement/hero.jpg";
 import back_arrow from "img/icons/back-arrow.svg";
 import edit_ico from "img/icons/edit.svg";
 import communication from "img/icons/skills/communication.svg";
@@ -14,7 +14,7 @@ import selfWork from "img/icons/skills/selfWork.svg";
 import designInnovation from "img/icons/skills/designInnovation.svg";
 import infoManagement from "img/icons/skills/infoManagement.svg";
 
-import infoManagementPortfolio from "user/portfolio/infoManagement/hero.jpg";
+import infoManagementPortfolio from "img/user/portfolio/infoManagement/hero.jpg";
 
 
 const PortfolioDisplayPage = props => {

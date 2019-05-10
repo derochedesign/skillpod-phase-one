@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import SkillTileProgress from 'utility/SkillProgress';
+import SkillTileProgress from 'components/utility/SkillProgress';
 
 import menu from "img/icons/menu.svg";
 import comp_ico from "img/icons/competency.svg";

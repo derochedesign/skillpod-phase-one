@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import me from "user/me.jpg";
+import me from "img/user/me.jpg";
 import communication from "img/icons/skills/communication.svg";
 import selfWork from "img/icons/skills/selfWork.svg";
 import designInnovation from "img/icons/skills/designInnovation.svg";

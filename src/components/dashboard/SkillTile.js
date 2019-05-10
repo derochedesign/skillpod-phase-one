@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import checkmark from "img/icons/checkmark.svg";
 import lock from "img/icons/locked.svg";
-import SkillProgress from 'utility/SkillProgress';
+import SkillProgress from 'components/utility/SkillProgress';
 
 const { useState, useRef } = React;
 

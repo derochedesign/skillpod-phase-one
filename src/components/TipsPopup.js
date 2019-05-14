@@ -11,10 +11,10 @@ const TipsPopup = (props) => {
     <div className="pop-up-nav">
       <nav className="toolbar">
         <ul className="tools">
-          <li className="tool current"><Link to="javascript:">tips</Link><div className="tool-selected"></div></li>
-          <li className="tool"><Link to="javascript:">reflection</Link><div className="tool-selected"></div></li>
+          <li className="tool current"><Link to="">tips</Link><div className="tool-selected"></div></li>
+          <li className="tool"><Link to="">reflection</Link><div className="tool-selected"></div></li>
           <li></li>
-          <li className="tool" id="tipsClose"><Link to="javascript:">close</Link><div className="tool-selected"></div></li>
+          <li className="tool" id="tipsClose"><Link to="">close</Link><div className="tool-selected"></div></li>
         </ul>
       </nav>
     </div>

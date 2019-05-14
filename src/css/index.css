@@ -115,7 +115,7 @@ h4 {
 }
 h5 {
   margin: 0;
-  font: 300 0.9em/var(--text-line) var(--content-font);
+  font: 300 1em/var(--text-line) var(--content-font);
 }
 h6 {
   font: 600 0.75em/1 var(--subheading-font);
@@ -343,6 +343,11 @@ a:focus, a:hover {
   background-color: var(--color-light);
   padding: var(--padding);
   box-shadow: var(--shadow);
+}
+.tile > * {
+  max-width: 70rem;
+  margin-left: auto;
+  margin-right: auto;
 }
   .tile > :first-child {
     margin-top: 0;
@@ -920,7 +925,13 @@ a:focus, a:hover {
 
 .pop-up .toolbar {
   position: static;
+  width: 100%;
+  color: var(--color-font);
 }
+.pop-up .toolbar a {
+  color: var(--color-font);
+}
+
 .pop-up .toolbar .tools {
   background-color: transparent;
   height: auto;
@@ -1029,7 +1040,7 @@ input, select, textarea {
 
 select.goal-input {
   background-color: transparent;
-  border: solid 3px var(--color-light);
+  border: solid 0.2em var(--color-light);
   font-family: var(--heading-font);
   font-weight: bold;
   color: var(--color-light);
@@ -1819,10 +1830,12 @@ button, .button, .buttonAlt, .button-square {
 }
 
 .portfolio-pieces {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 50vw 50vw;
+  display: flex;
+  flex-flow: wrap;
   color: var(--color-light);
+  max-width: 70rem;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .portfolio-pieces .portfolio-thumb {
@@ -1830,10 +1843,12 @@ button, .button, .buttonAlt, .button-square {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  display: grid;
   padding: calc( var(--padding) / 2);
   transition: 0.6s ease;
+  width: calc(100% / 3);
+  padding-top: 20%;
 }
+
 .portfolio-pieces .portfolio-thumb:hover {
   opacity: 0.9;
   text-decoration: underline;
@@ -1858,8 +1873,6 @@ button, .button, .buttonAlt, .button-square {
   align-self: end;
   margin: 0;
 }
-
-
 
 /****************** COLOUR CLASSES ******************/
 
@@ -1933,6 +1946,12 @@ button, .button, .buttonAlt, .button-square {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
 
+}
+
+.build-goal {
+  font-size: 1.5vw;
+  padding: var(--padding);
+  max-width: 60vw;
 }
 
 /* dahsboard */
@@ -2389,4 +2408,10 @@ button, .button, .buttonAlt, .button-square {
   .always-fill-height {
     min-height: 100vh;
   }
+  
+  .build-goal {
+    font-size: 2em;
+    max-width: 70rem;
+  }
+  
 }

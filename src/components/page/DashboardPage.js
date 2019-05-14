@@ -51,6 +51,8 @@ function DashboardPage(props) {
   
   const navigateSkills = () => {
     console.log("do something");
+    //set selected class to next skill. align it to left of view. change background gradient colour
+    //disabled buttons if on first or last skill
   }
   
   return (

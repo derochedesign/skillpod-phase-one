@@ -19,6 +19,8 @@ const CompetencyPage = props => {
   const skill = props.skill;
   const comp = props.comp;
 
+  // CHECK SKILL AND COMP TO ENSURE THEY ARE VALID!!!
+
   // Get the current page from the url
   //useEffect(() => setPageNum(props.page));
 
@@ -30,7 +32,7 @@ const CompetencyPage = props => {
       <MainToolbar classVal="collapse" />
       <CompNav />
         <main class="layout">
-          <div className="tile full smarterLearning white-txt">
+          <div className={`tile full white-txt ${skill}`}>
             <div className="local-nav">
               <Link to="/dashboard"><img src={back_arrow} className="back-icon" alt="page back icon"/></Link>
               <Link to="javascript:"><img src={menu} className="menu-icon" alt="menu icon"/></Link>

@@ -30,16 +30,16 @@ function DashboardPage(props) {
     {id: 0, name: "Self Work", icon: selfWork, class: "selfwork",
     progress: 12.5*8, color: "#42C2CF", complete: true, comp: 4 },
     //current module pos
-    {id: 3, name: "Information Management", icon: infoManagement, class: "infoManagement",
+    {id: 3, name: "Information Management", icon: infoManagement, class: "info-management",
     progress: 12.5*8, color: "#42C2CF", complete: true, comp: 4 },
     //portfolio piece
-    {id: 6, name: "Smarter Learning", icon: smarterLearning, class: "smarterLearning",
+    {id: 6, name: "Smarter Learning", icon: smarterLearning, class: "smarter-learning",
     progress: 12.5*6, color: "#42C2CF", complete: false, comp: 3 },
     //disabled, and so on
-    {id: 1, name: "Design & Innovation", icon: designInnovation, class: "designInnovation",
+    {id: 1, name: "Design & Innovation", icon: designInnovation, class: "design-innovation",
     progress: 12.5*0, color: "#42C2CF", complete: false, comp: 0 },
 
-    {id: 4, name: "Strategic Thinking", icon: strategicThinking,  class: "strategicThinking",
+    {id: 4, name: "Strategic Thinking", icon: strategicThinking,  class: "strategic-thinking",
     progress: 12.5*0, color: "#42C2CF", complete: false, comp: 0 },
     //new module
     {id: 5, name: "Teamwork", icon: teamwork, class: "teamwork",

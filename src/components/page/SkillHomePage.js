@@ -13,53 +13,61 @@ import MainToolbar from "components/utility/MainToolbar";
 const { useState, useRef } = React;
 
 function SkillHomePage(props) {
-  
-  const skillData = {id: 6, name: "Smarter Learning", icon: smarterLearning, class: "smarterLearning",
-  progress: 12.5*6, color: "#42C2CF", complete: false, comp: 3 };
-  
-  const [progress, setProgress] = useState({
-    progress: `60%`, complete: false, comp:3
-  });
-    
-  const skillInfo = {
-    sub: `Anything and everything Smarter Learning.`,
-    desc: [
-      `Learning is the change in one's behaviour or knowledge which comes about as a result of experience.`,
-      `We all learn in different ways, and sometimes individuals have different methods of learning depending on the job they need to do.`
-    ],
-    employersValue: [
-      `Willingness to learn`,
-      `Resilience`,
-      `Resourcefulness`,
-      `Adaptability`,
-      `Learns effectively from others`
-    ],
-    compDesc:[
-      {
-        "title":`Knowing yourself as a learner.`,
-        "desc":`Complete the Personal Learning Profile to get a more in depth understanding of your learning preferences. The better you know yourself, the smarter and faster you can learn.`
-      },
-      {
-        "title":`Cultivating a growth mindset.`,
-        "desc":`A growth mindset is more than being open-minded. It is a belief that you, as an individual are capable of improving if consistent effort is applied. These individuals are less concerned with proving themselves than about improving.`
-      },
-      {
-        "title":`Achieving your goals.`,
-        "desc":`Creating well defined goals will help structure your learning.`
-      },
-      {
-        "title":`Harnessing the power of failure.`,
-        "desc":`Fear of failure prevents learning. Failure must be reframed as an opportunity for learning.`
+
+
+  const skills = [
+    {
+      data: {id: 6, name: "Smarter Learning", icon: smarterLearning, class: "smarter-learning", progress: 12.5*6, color: "#42C2CF", complete: false, comp: 3 },
+      state: { progress: `60%`, complete: false, comp:3 },
+      content: {
+        sub: `Anything and everything Smarter Learning.`,
+        desc: [
+          `Learning is the change in one's behaviour or knowledge which comes about as a result of experience.`,
+          `We all learn in different ways, and sometimes individuals have different methods of learning depending on the job they need to do.`
+        ],
+        employersValue: [
+          `Willingness to learn`,
+          `Resilience`,
+          `Resourcefulness`,
+          `Adaptability`,
+          `Learns effectively from others`
+        ],
+        compDesc:[
+          {
+            "title":`Knowing yourself as a learner.`,
+            "desc":`Complete the Personal Learning Profile to get a more in depth understanding of your learning preferences. The better you know yourself, the smarter and faster you can learn.`
+          },
+          {
+            "title":`Cultivating a growth mindset.`,
+            "desc":`A growth mindset is more than being open-minded. It is a belief that you, as an individual are capable of improving if consistent effort is applied. These individuals are less concerned with proving themselves than about improving.`
+          },
+          {
+            "title":`Achieving your goals.`,
+            "desc":`Creating well defined goals will help structure your learning.`
+          },
+          {
+            "title":`Harnessing the power of failure.`,
+            "desc":`Fear of failure prevents learning. Failure must be reframed as an opportunity for learning.`
+          }
+        ]
       }
-    ]
-  };
+    }, // end smarterlearning
+  ];
+
   
+  const currentSkill = skills.find(sk => sk.data.class === props.skill.toLowerCase()) || skills[0];
+
+  const skillData = currentSkill.data;
+  const [progress, setProgress] = useState(currentSkill.state);
+  const skillInfo = currentSkill.content;
+  
+
   return (
     <>
     <MainToolbar />
     <main className="layout skill-home">
         <div className="always-fill-height">
-          <div className="tile full smarterLearning white-txt make-it-relative skill-home-info">
+          <div className={"tile full white-txt make-it-relative skill-home-info " + skillData.class }>
             <div className="local-nav">
               <Link className="back" to="/dashboard"><img alt="page back icon" src={back_arrow} className="back-icon"/></Link>
               <Link className="menu" to=""><img alt="menu icon" src={menu} className="menu-icon"/></Link>

@@ -42,10 +42,10 @@ const IndexPage = props => {
           <div />
           <div className="start">
             <Link to="/yourgoal" className="button">
-              Begin
+              Get Started
             </Link>
             <Link to="/login" className="buttonAlt">
-              I already have an account.
+              I already have a Skillpod account.
             </Link>
           </div>
         </div>

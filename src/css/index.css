@@ -980,6 +980,7 @@ a:focus, a:hover {
     border-radius: 50%;
     margin-right: var(--gap);
     cursor: pointer;
+    position: relative;
   }
     .step:last-child {
       margin-right: 0;
@@ -990,6 +991,13 @@ a:focus, a:hover {
     .step:hover {
       border-color: var(--color-impact);
       background-color: var(--color-impact);
+    }
+    .step > a {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
     }
 
 /****************** TAB COMPONENT ******************/
@@ -1876,22 +1884,22 @@ button, .button, .buttonAlt, .button-square {
 
 /****************** COLOUR CLASSES ******************/
 
-.smarterLearning {
+.smarter-learning {
   background-color: var(--color-smarter-learning);
   /* background-image: url("../img/patterns/smarterLearning-pattern.svg"); */
   background-size: cover;
 }
-.strategicThinking {
+.strategic-thinking {
   background-color: var(--color-strategic-thinking);
   /* background-image: url("../img/patterns/strategicThinking-pattern.svg"); */
   background-size: cover;
 }
-.infoManagement {
+.info-management {
   background-color: var(--color-info-management);
   /* background-image: url("../img/patterns/infoManagement-pattern.svg"); */
   background-size: cover;
 }
-.designInnovation {
+.design-innovation {
   background-color: var(--color-design-innovation);
   /* background-image: url("../img/patterns/designInnovation-pattern.svg"); */
   background-size: cover;

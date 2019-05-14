@@ -24,11 +24,9 @@ const App = props => {
         <Route path="/help" component={HelpPage} />
         <Route path="/signup" component={SignupPage} />
         <Route path="/login" component={LoginPage} />
-        <Route path="/skill" component={SkillHomePage} /> {/*put literal skill name here*/}
-        <Route path="/competency/1" component={CompetencyPage} />
-        <Route path="/competency/2" component={CompetencyPage} />
-        <Route path="/competency/3" component={CompetencyPage} />
-        <Route path="/competency/4" component={CompetencyPage} />
+        {/* <Route exact path="/skill" component={LoginPage} /> Go somewhere!!! */}
+        <Route exact path="/skill/:skill"  render={(props) => <SkillHomePage skill={props.match.params.skill} {...props} />  } />
+        <Route exact path="/skill/:skill/:comp/:page" render={(props) => <CompetencyPage skill={props.match.params.skill} comp={props.match.params.comp} page={props.match.params.page} {...props} /> } />
       </div>
     </Router>
   ); // end return

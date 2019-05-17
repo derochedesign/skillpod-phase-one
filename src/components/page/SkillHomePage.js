@@ -84,7 +84,7 @@ function SkillHomePage(props) {
                 <h2>What Employers Value</h2>
                 {
                   skillInfo.employersValue.map(val => 
-                    <li>{val}</li>
+                    <li><p>{val}</p></li>
                   )
                 }
               </ul>

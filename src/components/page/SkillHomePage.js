@@ -68,11 +68,11 @@ function SkillHomePage(props) {
     <main className="layout skill-home">
         <div className="always-fill-height">
           <div className={"tile full white-txt make-it-relative skill-home-info " + skillData.class }>
-            <div className="local-nav">
-              <Link className="back" to="/dashboard"><img alt="page back icon" src={back_arrow} className="back-icon"/></Link>
+            <div className="local-nav raise">
+              <Link className="back" to="/dashboard"><img alt="page back icon" src={back_arrow} className="back-icon go-back"/></Link>
               <Link className="menu" to=""><img alt="menu icon" src={menu} className="menu-icon"/></Link>
             </div>
-            <div className="bring-forward skill-info">
+            <div className="bring-forward skill-info raise">
               <h1>{skillData.name}</h1>
               <h5>{skillInfo.sub}</h5>
               {
@@ -89,7 +89,7 @@ function SkillHomePage(props) {
                 }
               </ul>
             </div>
-            <div className="skill-progress">
+            <div className="skill-progress raise">
                 <h6>Progress</h6>
                 <div className="prog-bar light">
                   <SkillTileProgress pos={1} compProgress={progress.comp} complete={progress.complete} />
@@ -97,9 +97,13 @@ function SkillHomePage(props) {
                   <SkillTileProgress pos={3} compProgress={progress.comp} complete={progress.complete} />
                   <SkillTileProgress pos={4} compProgress={progress.comp} complete={progress.complete} />
                 </div>            
-              </div>
-            <div className="begin-module">
-              <Link to="/competency/1" className="button">Begin</Link>
+            </div>
+            <div className="begin-module raise">
+                <div>
+                  <h6>Next Up</h6>
+                  <h5>Knowing yourself as a learner.</h5>
+                </div>
+                <Link to="/competency/1" className="button">Continue</Link>
             </div>
 
             <img src={smarterLearning} className="module-background-icon" alt="Smarter Learning background image"/>

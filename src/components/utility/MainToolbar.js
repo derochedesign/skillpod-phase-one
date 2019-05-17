@@ -5,7 +5,6 @@ import dashboard_ico from "img/icons/dashboard.svg";
 import portfolio_ico from "img/icons/portfolio.svg";
 import logo from "img/logos/skillpod-logo-head.svg";
 
-
 const MainToolbar = props => {
     return (
         <nav className={`toolbar ${ (props.classVal) ? props.classVal : ``}`}>

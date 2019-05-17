@@ -1,24 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 
-class PortfolioThumbs extends Component {
-    
-  state = {
-      piece: this.props.piece
-  }
-    
-  render() {
-    return (
+const PortfolioThumbs = props => {
+  return (
         
-        <div className="portfolio-thumb">
-            <div className="thumb-info">
-                <div className={`mini-module module ${this.state.piece.skill.class}`}>
-                <img alt="skill icon" src={ this.state.piece.skill.icon }/>
-                </div>
-                <h4>{this.state.piece.title}</h4>
+    <div className="portfolio-thumb" onClick={()=> props.setPopVisible(true)}>
+        <div className="thumb-info">
+            <div className={`mini-module module ${props.piece.skill.class}`}>
+            <img alt="skill icon" src={props.piece.skill.icon }/>
             </div>
+            <h4>{props.piece.title}</h4>
         </div>
-    );
-  }
+    </div>
+  )
 }
-
 export default PortfolioThumbs;

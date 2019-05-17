@@ -2,10 +2,9 @@ import React, {useState} from "react";
 import { Link } from "react-router-dom";
 
 import PortfolioThumbs from "components/portfolio/PortfolioThumbs";
-import CurrentPortfolioPiece from "components/portfolio/CurrentPortfolioPiece";
+import PortfolioPiecePopup from "components/portfolio/PortfolioPiecePopup";
 import MainToolbar from "components/utility/MainToolbar";
 
-import me from "img/user/me.jpg";
 import portfolio_hero from "img/user/portfolio/infoManagement/hero.jpg";
 import back_arrow from "img/icons/back-arrow.svg";
 import edit_ico from "img/icons/edit.svg";
@@ -18,7 +17,8 @@ import infoManagementPortfolio from "img/user/portfolio/infoManagement/hero.jpg"
 
 
 const PortfolioDisplayPage = props => {
-
+  
+  const [popVisible, setPopVisible] = useState(false);
   const [pieces, setPieces] = useState([
     {
       id: 1,
@@ -27,7 +27,7 @@ const PortfolioDisplayPage = props => {
         id: 3,
         name: `Information Management`,
         icon: infoManagement,
-        class: `infoManagement`
+        class: `info-management`
       },
       content: `Information Management is crucial for me as a recent graduate looking for work. While talking to a prospective employer, she told me that she found a link to a number of YouTube videos that I had created when I was younger. This was not the professional image that I hoped to share. As a result, I have carefully searched and changed privacy settings on my social media to make sure that I have managed my personal image. I know that care and attention to privacy is important for me and for those around me and also will reflect on how I care about the company and colleagues where I work.`,
       img: infoManagementPortfolio
@@ -51,7 +51,7 @@ const PortfolioDisplayPage = props => {
         id: 7,
         name: `Seyeetrk`,
         icon: infoManagement,
-        class: `infoManagement`
+        class: `info-management`
       },
       content: `Selfwork is crucial for me as a recent graduate looking for work. While talking to a prospective employer, she told me that she found a link to a number of YouTube videos that I had created when I was younger. This was not the professional image that I hoped to share. As a result, I have carefully searched and changed privacy settings on my social media to make sure that I have managed my personal image. I know that care and attention to privacy is important for me and for those around me and also will reflect on how I care about the company and colleagues where I work.`,
       img: infoManagementPortfolio
@@ -75,7 +75,6 @@ const PortfolioDisplayPage = props => {
         <div className="tile full no-padding profile-hero">
           <section className="portfolio-bio two-column-grid">
             <div className="profile-image">
-              <img alt="It's you!" src={me} />
               <div className="hero-info">
                 <h1 className="white-txt">Brent Chad</h1>
                 <div className="tags">
@@ -114,11 +113,11 @@ const PortfolioDisplayPage = props => {
         </div>
         <div className="portfolio-pieces">
           {pieces.map(piece => (
-            <PortfolioThumbs piece={piece} />
+            <PortfolioThumbs piece={piece} setPopVisible={setPopVisible}/>
           ))}
         </div>
 
-        <CurrentPortfolioPiece piece={pieces[0]} />
+        {(popVisible) && <PortfolioPiecePopup setPopVisible={setPopVisible} piece={pieces[0]}/>}
 
         <div className="tile blank">
           <h1>About Brent</h1>

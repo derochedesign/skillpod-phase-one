@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import me from "img/user/me.jpg";
 import communication from "img/icons/skills/communication.svg";
 import selfWork from "img/icons/skills/selfWork.svg";
 import designInnovation from "img/icons/skills/designInnovation.svg";
@@ -17,11 +16,14 @@ function PortfolioEditPage(props) {
           <h1>Skillpod Portfolio</h1>
           <h3>Editing</h3>
         </div>
-
+        <div className="button-corner">
+          <Link to="/portfolio" className="button">
+            <span>Save</span>
+          </Link>
+        </div>
         <div className="tile full no-padding profile-hero">
           <section className="portfolio-bio two-column-grid">
             <div className="profile-image">
-              <img alt="It's you!" src={me} />
               <div className="hero-info">
                 <h1 className="white-txt">Brent Chad</h1>
                 <div className="tags">
@@ -31,7 +33,6 @@ function PortfolioEditPage(props) {
                 </div>
               </div>
             </div>
-
             <div>
               <div className="tile blank">
                 <h2>Bio</h2>
@@ -83,7 +84,7 @@ function PortfolioEditPage(props) {
                   <h3>View</h3>
                 </div>
               </li>
-              <li className="tile module two-column-grid designInnovation">
+              <li className="tile module two-column-grid design-innovation">
                 <div className="put-after">
                   <h4 className="small-margin-bottom">Module</h4>
                   <h3>Design & Innovation</h3>

@@ -45,12 +45,13 @@ const SkillTile = (props) => {
     let destination;
     
     if( (props.tile.complete) ) {
-        destination = <button onClick={togglePopUp} type="button" to="/skill" className="button">Recap</button>
+        destination = <button onClick={togglePopUp} type="button" to={`/skill/${props.tile.slug}`} className="button">Recap</button>
     }
     else {
-        destination = <Link to="/skill" className="button">Go</Link>
+        // If there is progress, go directly to that competency number?
+        destination = <Link to={`/skill/${props.tile.slug}`} className="button">Go</Link>
     }
-    
+
     return (
         <div className={`tile module skill-grid ${props.tile.slug} ${(props.tile.complete ? "complete" : (!props.tile.competencies) ? "disabled" : undefined)}`}>
             <div>

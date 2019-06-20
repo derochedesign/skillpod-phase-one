@@ -44,10 +44,10 @@ const SkillTile = (props) => {
     let destination;
     
     if( (props.tile.complete) ) {
-        destination = <button onClick={togglePopUp} type="button" to="/skill" className="button">Recap</button>
+        destination = <button onClick={togglePopUp} type="button" to={`/skill/${props.tile.class}`} className="button">Recap</button>
     }
     else {
-        destination = <Link to="/skill" className="button">Go</Link>
+        destination = <Link to={`/skill/${props.tile.class}`} className="button">Go</Link>
     }
     
     return (

@@ -103,7 +103,7 @@ function SkillHomePage(props) {
                   <h6>Next Up</h6>
                   <h5>Knowing yourself as a learner.</h5>
                 </div>
-                <Link to="/competency/1" className="button">Continue</Link>
+                <Link to={`${skillData.class}/1/0`} className="button">Continue</Link>
             </div>
 
             <img src={smarterLearning} className="module-background-icon" alt="Smarter Learning background image"/>

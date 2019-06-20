@@ -1,0 +1,24 @@
+[
+  {
+    "id": 101,
+    "slug": "smarter-learning",
+    "title": "Smarter Learning",
+    "subheading": "Anything and everything smarter learning.",
+    "instruction": "Here's what this skill helps with...",
+    "competencies": [201, 202, 203, 204],
+    "color": "rgb(123,123,123)",
+    "logo": "img/icons/skills/smarterLearning.svg",
+    "complete": false
+  },
+  {
+    "id": 102,
+    "slug": "strategic-thinking",
+    "title": "Strategic Thinking",
+    "subheading": "Anything and everything smarter learning.",
+    "instruction": "Here's what this skill helps with...",
+    "competencies": [205, 206, 207, 208],
+    "color": "rgb(123,123,123)",
+    "logo": "img/icons/skills/strategicThinking.svg",
+    "complete": false
+  }
+]

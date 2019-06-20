@@ -1,53 +1,62 @@
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
-import React, { Component } from 'react';
 
+// Components
 import SkillTile from "components/dashboard/SkillTile";
 import MiniSkillTile from "components/dashboard/MiniSkillTile";
 import HeadProgress from "components/dashboard/HeadProgress";
 import TipsPopup from 'components/TipsPopup';
 import MainToolbar from "components/utility/MainToolbar";
 
-import smarterLearning from "img/icons/skills/smarterLearning.svg";
-import strategicThinking from "img/icons/skills/strategicThinking.svg";
-import teamwork from "img/icons/skills/teamwork.svg";
-import communication from "img/icons/skills/communication.svg";
-import selfWork from "img/icons/skills/selfWork.svg";
-import designInnovation from "img/icons/skills/designInnovation.svg";
-import infoManagement from "img/icons/skills/infoManagement.svg";
-
+// Images
 import nav_back from "img/icons/backward-arrow.svg";
 import nav_forward from "img/icons/forward-arrow.svg";
 
-const { useState, useRef } = React;
+// Data
+import ModuleTable from "data/Module.json";
 
-function DashboardPage(props) {
+
+const DashboardPage = props => {
   
   const [popVisible, setPopVisible] = useState(false);
   console.log(`inf: ${popVisible}`);
-  
-  const [tiles, setTile] = useState([
-    //go to tips pop up
-    {id: 0, name: "Self Work", icon: selfWork, class: "selfwork",
-    progress: 12.5*8, color: "#42C2CF", complete: true, comp: 4 },
-    //current module pos
-    {id: 3, name: "Information Management", icon: infoManagement, class: "info-management",
-    progress: 12.5*8, color: "#42C2CF", complete: true, comp: 4 },
-    //portfolio piece
-    {id: 6, name: "Smarter Learning", icon: smarterLearning, class: "smarter-learning",
-    progress: 12.5*6, color: "#42C2CF", complete: false, comp: 3 },
-    //disabled, and so on
-    {id: 1, name: "Design & Innovation", icon: designInnovation, class: "design-innovation",
-    progress: 12.5*0, color: "#42C2CF", complete: false, comp: 0 },
 
-    {id: 4, name: "Strategic Thinking", icon: strategicThinking,  class: "strategic-thinking",
-    progress: 12.5*0, color: "#42C2CF", complete: false, comp: 0 },
-    //new module
-    {id: 5, name: "Teamwork", icon: teamwork, class: "teamwork",
-    progress: 12.5*0, color: "#42C2CF", complete: false, comp: 0 },
+  //this!!!
+  //useEffect(  JSON.parse(ModuleTable)  );
+  useEffect(() => {
+    //console.log('Hello world', ModuleTable);
+    setModule(ModuleTable);
+
+    //import nav_forward from modules.;
     
-    {id: 2, name: "Communication & Networking", icon: communication, class: "networking",
-    progress: 12.5*0, color: "#42C2CF", complete: false, comp: 0 },
-  ]);
+    //console.log(ModuleTable, JSON.parse(ModuleTable));
+  }, []);
+  
+  const [modules, setModule] = useState([]
+    // [
+    //   //go to tips pop up
+    //   {id: 0, name: "Self Work", icon: selfWork, class: "selfwork",
+    //   progress: 12.5*8, color: "#42C2CF", complete: true, comp: 4 },
+    //   //current module pos
+    //   {id: 3, name: "Information Management", icon: infoManagement, class: "info-management",
+    //   progress: 12.5*8, color: "#42C2CF", complete: true, comp: 4 },
+    //   //portfolio piece
+    //   {id: 6, name: "Smarter Learning", icon: smarterLearning, class: "smarter-learning",
+    //   progress: 12.5*6, color: "#42C2CF", complete: false, comp: 3 },
+    //   //disabled, and so on
+    //   {id: 1, name: "Design & Innovation", icon: designInnovation, class: "design-innovation",
+    //   progress: 12.5*0, color: "#42C2CF", complete: false, comp: 0 },
+
+    //   {id: 4, name: "Strategic Thinking", icon: strategicThinking,  class: "strategic-thinking",
+    //   progress: 12.5*0, color: "#42C2CF", complete: false, comp: 0 },
+    //   //new module
+    //   {id: 5, name: "Teamwork", icon: teamwork, class: "teamwork",
+    //   progress: 12.5*0, color: "#42C2CF", complete: false, comp: 0 },
+
+    //   {id: 2, name: "Communication & Networking", icon: communication, class: "networking",
+    //   progress: 12.5*0, color: "#42C2CF", complete: false, comp: 0 },
+    // ]
+  );
   
   const navigateSkills = () => {
     console.log("do something");
@@ -70,7 +79,7 @@ function DashboardPage(props) {
     
         <div id="setBackgroundGradient" className="scrollable-row">
           {
-            tiles.map( (tile,i) => 
+            modules.map( (tile,i) => 
               <SkillTile tile={tile} key={i} popVisible={popVisible} setPopVisible={setPopVisible}/>
             )
           }  
@@ -89,7 +98,7 @@ function DashboardPage(props) {
             <h5>Recap on skills you’ve completed.</h5>
             <div className="scrollable-row trophy-case">
               {
-                tiles.filter (tile => tile.complete).map((tile,i) =>
+                modules.filter(tile => tile.complete).map((tile, i) =>
                   <MiniSkillTile tile={tile} key={i} popVisible={popVisible} setPopVisible={setPopVisible}/>
                 )
               }

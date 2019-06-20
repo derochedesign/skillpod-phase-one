@@ -9,7 +9,6 @@ import back_arrow from "img/icons/back-arrow.svg";
 import smarterLearning from "img/icons/skills/smarterLearning.svg";
 import MainToolbar from "components/utility/MainToolbar";
 
-
 const { useState, useRef } = React;
 
 function SkillHomePage(props) {
